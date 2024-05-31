@@ -981,10 +981,11 @@ export const CompilerUserConfigSchema = z.object({
     .optional()
     .default({}),
   mockAppEntry: z.string().optional(),
+  allowMissingFiles: z.boolean().default(false).optional(), // 此改动不提交到源仓库
   experiments: z
     .object({
       autoTrimRuntimeHelpers: z.boolean().default(false).optional(),
-      compressCssClassName: compressCssClassNameSchema
+      compressCssClassName: compressCssClassNameSchema,
     })
     .optional(),
   analyzer: analyzerSchema,

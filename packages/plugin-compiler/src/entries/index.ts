@@ -2848,7 +2848,7 @@ export class EntryBuilder implements SupportExts, EntryBuilderHelpers {
       const allowMissingNpmFiles =
         (parentEntry?.entryFileType === EntryFileType.config &&
           fileType === EntryFileType.style) ||
-        this.userConfig.compileMode !== CompileModes.bundle
+        this.userConfig.compileMode !== CompileModes.bundle || this.userConfig.allowMissingFiles; // 此改动不提交到源仓库
 
       // npm 中不支持 条件后缀
       const propName: ExtsPropName = `${fileType}Exts`
